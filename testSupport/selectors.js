@@ -84,7 +84,7 @@ module.exports = {
         },
         volunteerSignUp:{
             name: 'input[class="volunteer-email-field"]',
-            email: 'input[type="email"]',
+            email: 'input[name="email"]',
         }   
     },
 

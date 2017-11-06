@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="8">
+            tests="9">
 
   <testsuite name="test"
     errors="0" failures="0" hostname="" id="" package="test" skipped="0"
-    tests="8" time="64.04" timestamp="Sun, 05 Nov 2017 22:36:29 GMT">
+    tests="9" time="70.29" timestamp="Mon, 06 Nov 2017 00:10:05 GMT">
   
-    <testcase name="Click Home page buttons" classname="test" time="11.53" assertions="5">
+    <testcase name="Click Home page buttons" classname="test" time="26.88" assertions="5">
 
     
 
@@ -20,23 +20,14 @@
     
     </testcase>
   
-    <testcase name="Calendar Screen test" classname="test" time="11.30" assertions="2">
+    <testcase name="Calendar Screen test" classname="test" time="7.374" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="About Us screen test" classname="test" time="1.404" assertions="3">
-
-    
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Media screen test" classname="test" time="1.836" assertions="3">
+    <testcase name="About Us screen test" classname="test" time="1.030" assertions="3">
 
     
 
@@ -45,26 +36,42 @@
     
     </testcase>
   
-    <testcase name="Blog test" classname="test" time="1.421" assertions="1">
+    <testcase name="Media screen test" classname="test" time="1.215" assertions="3">
 
     
-    </testcase>
-  
-    <testcase name="Support Us good data test" classname="test" time="8.854" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Support Us bad test" classname="test" time="14.61" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Nav bar test" classname="test" time="13.08" assertions="1">
+    <testcase name="Blog test" classname="test" time="1.045" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Support Us good data test" classname="test" time="8.263" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Support Us bad test" classname="test" time="8.055" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Bottom menu nav bar test" classname="test" time="12.78" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Bottom menu mobile entry test" classname="test" time="3.657" assertions="1">
 
     
     </testcase>
