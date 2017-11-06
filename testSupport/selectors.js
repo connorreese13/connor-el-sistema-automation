@@ -36,7 +36,7 @@ module.exports = {
             text: 'Support Us'
         }, 
         readMoreButton:{
-            tag: 'input[type="button"]',
+            tag: 'input[value="Read More"]',
             text: 'Read More'
         } 
         
@@ -56,9 +56,14 @@ module.exports = {
     },
 
     aboutUsScreen:{
+        header: 'div[class="volunteers-header"]',
         loadMorePhotosButton: 'img[class="readmore"]',
         volunteerProfile: 'img[class="arrow-button"]', 
-        connectButton:  'div[class="connect-volunteer"]'
+        connectButton: 'div[class="connect-volunteer"]',
+        streetAddress:{
+            text: '6 Loop St, # 4', 
+            tag: 'div[class="street-address1"]'
+        }
     },
 
     mediaScreen:{
@@ -121,10 +126,33 @@ module.exports = {
                 text: 'Volunteer',
             },
             donate:{
-                tag: 'a[href="/suppor"]',
+                tag: 'a[href="/support"]',
                 text: 'Donate',
             },
             contactUsButton: 'input[class="contact-us"]',
         }
+    },
+
+    errorMessages:{
+        email:{
+            tag: 'div[class="donate-error-message"]',
+            text: 'You must enter a valid email'
+        },
+        creditCardNumber:{
+            tag: 'div[class="donate-error-message"]',
+            text: 'You must enter a valid credit card number'
+        },
+        amount:{
+            tag: 'div[class="donate-error-message"]',
+            text: 'You must enter an amount'
+        },
+        cvcNumber:{
+            tag: 'div[class="donate-error-message"]',
+            text:'You must enter a valid cvc'
+        },
+        expiration:{
+            tag: 'div[class="donate-error-message"]',
+            text: 'You must enter a valid date'
+        }, 
     }
 }

@@ -1,14 +1,106 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="1"
-            tests="9">
+            failures="0"
+            tests="10">
 
   <testsuite name="test"
-    errors="0" failures="1" hostname="" id="" package="test" skipped="8"
-    tests="9" time="5.653" timestamp="Mon, 06 Nov 2017 00:22:06 GMT">
+    errors="0" failures="0" hostname="" id="" package="test" skipped="0"
+    tests="10" time="69.68" timestamp="Mon, 06 Nov 2017 23:26:34 GMT">
   
-    <testcase name="Click Home page buttons" classname="test" time="5.653" assertions="1">  <failure message="Timed out while waiting for element &lt;section[class=&quot;upcoming-events&quot;]&gt; to be present for 500 milliseconds.">    at Object.Click Home page buttons (/Users/connorreese/Desktop/Source-Directory/connor-el-sistema-automation/tests/test.js:18:10)
-    at _combinedTickCallback (internal/process/next_tick.js:73:7)</failure>
+    <testcase name="Click Home page buttons" classname="test" time="13.49" assertions="9">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Calendar Screen test" classname="test" time="6.855" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="About Us screen test" classname="test" time="1.144" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Media screen test" classname="test" time="1.554" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Blog test" classname="test" time="1.218" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Support Us good data test" classname="test" time="8.624" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Support Us bad data test (incorrect email entry)" classname="test" time="7.947" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Support Us bad data test (no values entered: checking for all error messages after clicking Submit)" classname="test" time="11.21" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Bottom menu nav bar test" classname="test" time="13.77" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Bottom menu mobile entry test" classname="test" time="3.872" assertions="1">
 
     
     </testcase>
@@ -16,48 +108,6 @@
 
   
 
-  
-    
-    <testcase
-      name="Calendar Screen test" classname="test">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="About Us screen test" classname="test">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Media screen test" classname="test">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Blog test" classname="test">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Support Us good data test" classname="test">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Support Us bad test" classname="test">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Bottom menu nav bar test" classname="test">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Bottom menu mobile entry test" classname="test">
-      <skipped />
-    </testcase>
-    
   
   </testsuite>
 </testsuites>

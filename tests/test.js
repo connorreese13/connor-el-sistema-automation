@@ -15,22 +15,27 @@ module.exports = {
     'Click Home page buttons': browser => {
         browser
         .pause(1000)
-        .waitForElementPresent(selectors.homeScreen.homeHeader, 500)
+        .waitForElementPresent(selectors.homeScreen.homeHeader, 3000)
         .click(selectors.homeScreen.seeMoreButton.tag)
-        .pause(1000)
+        .waitForElementPresent(selectors.calendarScreen.calendarHeader, 3000)
+        // 'See More' button to calendar screen
         .click(selectors.tabSelectors.home)
-        .waitForElementPresent(selectors.homeScreen.homeHeader, 500)
+        .waitForElementPresent(selectors.homeScreen.homeHeader, 3000)
         .click(selectors.homeScreen.june12.tag)
-        .pause(500)
+        .waitForElementPresent(selectors.calendarScreen.calendarHeader, 3000)
+        // 'June 12' button to calendar screen      
         .click(selectors.tabSelectors.home)
-        .waitForElementPresent(selectors.homeScreen.homeHeader, 500)
+        .waitForElementPresent(selectors.homeScreen.homeHeader, 3000)
         .click(selectors.homeScreen.supportUsButton.tag)
-        .pause(1000)
+        .waitForElementPresent(selectors.supportUsScreen.donateBox.submitButton, 3000)
+        // 'Support Us' button to donate screen     
         .click(selectors.tabSelectors.home)
-        .waitForElementPresent(selectors.homeScreen.homeHeader, 500)
+        .waitForElementPresent(selectors.homeScreen.homeHeader, 3900)
         .click(selectors.homeScreen.readMoreButton.tag)        
-        .pause(200)
-        .waitForElementPresent(selectors.homeScreen.homeHeader, 500)
+        .assert.containsText(selectors.aboutUsScreen.streetAddress.tag, selectors.aboutUsScreen.streetAddress.text)
+        // 'Read More' button to about us screen     
+        .click(selectors.tabSelectors.home)
+        .waitForElementPresent(selectors.homeScreen.homeHeader, 3000)
      },
 
      //This test ensures that a user can sign up for the calendar notifications
@@ -97,14 +102,14 @@ module.exports = {
         .pause(3000)
         .assert.containsText(selectors.supportUsScreen.donateAnInstrument.tag, selectors.supportUsScreen.donateAnInstrument.text)
         .click(selectors.supportUsScreen.donateBox.submitButton)
-        .waitForElementPresent(selectors.supportUsScreen.donateBox.submitError, 2000)
-
+        //Below, I am making sure no error messages are presetn after I input good data
+        .waitForElementNotPresent(selectors.errorMessages.email.text, 200)
         .setValue(selectors.supportUsScreen.volunteerSignUp.name, data.goodData.volunteerSignUpData.name)
         .pause(3000)
     },
 
-    //This test is the same as the one above, just with bad data
-    'Support Us bad test': browser =>{
+    //This test is the same as the one above, just with bad data (the only error message that picks up with bad data is the email, this is a bug)
+    'Support Us bad data test (incorrect email entry)': browser =>{
         browser
         .pause(100)
         .click(selectors.tabSelectors.supportUs)
@@ -116,34 +121,62 @@ module.exports = {
         .setValue(selectors.supportUsScreen.donateBox.expiration, data.badData.donateData.expiration)
         .pause(3000)
         .click(selectors.supportUsScreen.donateBox.submitButton)
+        //below I am asserting that the correct email error message dispalys after a bad entry
+        .assert.containsText(selectors.errorMessages.email.tag, selectors.errorMessages.email.text)
         .waitForElementPresent(selectors.supportUsScreen.donateAnInstrument.tag, 2000)
+        .setValue(selectors.supportUsScreen.volunteerSignUp.name, data.badData.volunteerSignUpData.name)
+        .pause(3000)
+    },
 
+    'Support Us bad data test (no values entered: checking for all error messages after clicking Submit)': browser =>{
+        browser
+        .pause(100)
+        .click(selectors.tabSelectors.supportUs)
+        .waitForElementPresent(selectors.supportUsScreen.donateAnInstrument.tag, 2000)
+        .pause(3000)
+        .click(selectors.supportUsScreen.donateBox.submitButton)
+        .getLocationInView(selectors.supportUsScreen.donateBox.submitButton)
+        .pause(500)
+        //below I am using the clickByText command to verify that all of the correct error messages will display if I hit 'Submit' leaving the fields blank
+        .clickByText(selectors.errorMessages.email.tag, selectors.errorMessages.email.text)
+        .clickByText(selectors.errorMessages.amount.tag, selectors.errorMessages.amount.text)
+        .clickByText(selectors.errorMessages.creditCardNumber.tag, selectors.errorMessages.creditCardNumber.text)
+        .clickByText(selectors.errorMessages.cvcNumber.tag, selectors.errorMessages.cvcNumber.text)
+        .clickByText(selectors.errorMessages.expiration.tag, selectors.errorMessages.expiration.text)
+        .waitForElementPresent(selectors.supportUsScreen.donateAnInstrument.tag, 2000)
         .setValue(selectors.supportUsScreen.volunteerSignUp.name, data.badData.volunteerSignUpData.name)
         .pause(3000)
     },
 
     //In this test, I test the nav bar on the bottom of the screen
+    //After each click, I assure that the proper page has been displayed by using either assert or waitForElementPresent actions
     'Bottom menu nav bar test': browser =>{
         browser
         .waitForElementPresent(selectors.bottomMenu.header, 3000)
         .getLocationInView(selectors.bottomMenu.header)
         .pause(1000)
         .clickByText(selectors.bottomMenu.navBar.home.tag, selectors.bottomMenu.navBar.home.text)
+        .waitForElementPresent(selectors.homeScreen.homeHeader, 200)
         .pause(1000)
         .clickByText(selectors.bottomMenu.navBar.aboutUs.tag, selectors.bottomMenu.navBar.aboutUs.text)
+        .assert.containsText(selectors.aboutUsScreen.streetAddress.tag, selectors.aboutUsScreen.streetAddress.text)
         .getLocationInView(selectors.bottomMenu.header)        
         .pause(1000)
         .clickByText(selectors.bottomMenu.navBar.ourTeam.tag, selectors.bottomMenu.navBar.ourTeam.text)
+        .assert.containsText(selectors.aboutUsScreen.streetAddress.tag, selectors.aboutUsScreen.streetAddress.text)        
         .getLocationInView(selectors.bottomMenu.header)        
         .pause(1000)
         .clickByText(selectors.bottomMenu.navBar.calendar.tag, selectors.bottomMenu.navBar.calendar.text)
+        .waitForElementPresent(selectors.calendarScreen.calendarHeader, 200)
         .getLocationInView(selectors.bottomMenu.header)        
         .pause(1000)
         .clickByText(selectors.bottomMenu.navBar.volunteer.tag, selectors.bottomMenu.navBar.volunteer.text)
+        .assert.containsText(selectors.aboutUsScreen.streetAddress.tag, selectors.aboutUsScreen.streetAddress.text)        
         .getLocationInView(selectors.bottomMenu.header)        
         .pause(1000)
         .getLocationInView(selectors.bottomMenu.header)        
         .clickByText(selectors.bottomMenu.navBar.donate.tag, selectors.bottomMenu.navBar.donate.text)
+        .waitForElementPresent(selectors.supportUsScreen.donateBox.submitButton, 200)
         .pause(500)
         .click(selectors.bottomMenu.navBar.contactUsButton)
         .pause(1000)
@@ -163,7 +196,7 @@ module.exports = {
     
     //With limited functionality on several pages, I feel this test comprehensively 
     //tests what is at least available to be tested. With some bug fixes, it would
-    //be easier to test it more throughly. 
+    //be easier to test it more thoroughly. 
     
 
 

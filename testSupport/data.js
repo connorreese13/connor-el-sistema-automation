@@ -29,15 +29,15 @@ module.exports = {
     badData:{
         
         bottomMenuData:{
-            phoneNumber: 'poop'
+            phoneNumber: 'error'
         },
 
         calendarData:{
-            phoneNumber: 'poop'
+            phoneNumber: 'error'
         },
 
         donateData:{
-            email: 'poop',
+            email: 'error',
             amount: '300',
             creditCard: 'abcde',
             cvcNumber: '123',
@@ -46,7 +46,7 @@ module.exports = {
 
         volunteerSignUpData:{
             name: '$#!',
-            email: 'poop',
+            email: 'error',
         }
     }
 
