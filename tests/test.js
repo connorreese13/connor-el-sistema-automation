@@ -11,7 +11,7 @@ module.exports = {
             browser.end()
     },
 
-    //This test verifies that each test takes the user to the respective pages
+    //This test verifies that each tab takes the user to the respective pages
     'Click Home page buttons': browser => {
         browser
         .pause(1000)

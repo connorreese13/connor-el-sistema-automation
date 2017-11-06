@@ -1,6 +1,9 @@
 module.exports = {
     host: 'http://localhost:3000',
 
+    //I have broken down my selectors by screen, going into to further depth on 
+    //some more than others
+
     tabSelectors:{
         home: 'a[href="/home"]',
         calendar: 'a[href="/calendar"]',
@@ -87,6 +90,8 @@ module.exports = {
             email: 'input[name="email"]',
         }   
     },
+
+    //for the bottomMenu selector, I had to rely on clickCommands 
 
     bottomMenu:{
         header: 'div[class="footer-container"]',
